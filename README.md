@@ -10,26 +10,32 @@
 **Tamrin 6 :**
 
 1) Ensure SQLite database file exists
+```
 type NUL > database\database.sqlite
-
+```
 2) Configure .env for SQLite
 
 Open .env and set:
-
+```
 DB_CONNECTION=sqlite
 DB_DATABASE=database/database.sqlite
 
 CACHE_STORE=file
 SESSION_DRIVER=file
-
+```
 3) Build database + seed sample data
+```
 php artisan migrate:fresh --seed
+```
 
-4) Run the server
+5) Run the server
+```
 php artisan serve
+```
 
-5) Open in browser:
-
+6) Open in browser:
+```
 http://127.0.0.1:8000/reports/top-students
+```
 
 Expected output: student(s) with at least 2 results and avg score >= 80 (seed includes a student that qualifies).
