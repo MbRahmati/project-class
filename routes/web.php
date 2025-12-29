@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassroomController;
@@ -31,3 +32,5 @@ Route::resource('exams', ExamController::class);
 Route::resource('class-teacher', ClassTeacherController::class);
 Route::resource('class-student', ClassStudentController::class);
 Route::resource('feedback', FeedbackController::class);
+Route::get('/reports/top-students', [ReportsController::class, 'topStudents'])
+    ->name('reports.top-students');
